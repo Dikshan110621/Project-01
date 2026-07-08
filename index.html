@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You've got this, Starifa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600;800&display=swap');
+
+  * { box-sizing: border-box; }
+
+  :root {
+    --wine: #6B1E3C;
+    --gold: #C9A227;
+    --cream: #FFF8F3;
+    --paper: #FFFDFB;
+    --border: #EAD9CE;
+    --ink: #2E1620;
+    --blush: #FBEAF0;
+    --subtext: #5F4A42;
+  }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  .eyebrow {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 800;
+    margin: 0 0 8px;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--wine);
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  .subline {
+    text-align: center;
+    font-size: 16px;
+    color: var(--subtext);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    margin-bottom: 24px;
+  }
+
+  .countdown-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--subtext);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 16px;
+  }
+
+  .countdown-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .countdown-unit {
+    background: var(--blush);
+    border-radius: 14px;
+    padding: 14px 16px;
+    min-width: 70px;
+    text-align: center;
+  }
+
+  .countdown-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--wine);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .countdown-unit-label {
+    font-size: 11px;
+    color: var(--subtext);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+  }
+
+  .date-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--subtext);
+  }
+
+  input[type="date"] {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--wine);
+    margin: 0 0 6px;
+    text-align: center;
+  }
+
+  .rule {
+    height: 2px;
+    width: 56px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 0 auto 24px;
+  }
+
+  .quote-box {
+    background: var(--blush);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--wine);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 26px;
+    border-radius: 14px;
+    border: none;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .btn:hover { opacity: 0.92; }
+
+  .blessing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .blessing-item {
+    display: flex;
+    gap: 12px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .blessing-emoji {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tip-item {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .tip-num {
+    font-weight: 800;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .letter {
+    background: var(--blush);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .letter p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+
+  .letter .signature {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--wine);
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  .heart-particle {
+    position: absolute;
+    bottom: -40px;
+    font-size: 24px;
+    animation: floatUp 3.5s ease-in forwards;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(20deg); opacity: 0; }
+  }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--subtext);
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p class="eyebrow">for Starifa</p>
+  <h1>You've got this, my love</h1>
+  <p class="subline">
+    One month to go before your A/L exam. Every hour you've studied has led here.
+    Dikshan believes in you completely — and so does everyone who loves you.
+  </p>
+
+  <div class="card">
+    <p class="countdown-label">Time until the exam</p>
+    <div class="countdown-row" id="countdown-row">
+      <div class="countdown-unit">
+        <div class="countdown-num" id="days">--</div>
+        <div class="countdown-unit-label">Days</div>
+      </div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="hours">--</div>
+        <div class="countdown-unit-label">Hours</div>
+      </div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="minutes">--</div>
+        <div class="countdown-unit-label">Minutes</div>
+      </div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="seconds">--</div>
+        <div class="countdown-unit-label">Seconds</div>
+      </div>
+    </div>
+    <div class="date-row">
+      <label for="exam-date">Exam date:</label>
+      <input type="date" id="exam-date" />
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="section-title">Daily motivation</p>
+    <div class="rule"></div>
+    <div class="quote-box">
+      <p class="quote-text" id="quote-text">Loading...</p>
+    </div>
+    <button class="btn" id="new-quote-btn">New motivation</button>
+  </div>
+
+  <div class="card">
+    <p class="section-title">Blessings for you</p>
+    <div class="rule"></div>
+    <div class="blessing-list">
+      <div class="blessing-item"><span class="blessing-emoji">🌸</span> May your mind stay calm and clear on exam day, and every answer come to you with ease.</div>
+      <div class="blessing-item"><span class="blessing-emoji">🙏</span> Wishing you strength for every late night of studying and peace for every worried moment.</div>
+      <div class="blessing-item"><span class="blessing-emoji">✨</span> May all the hard work you've put in quietly turn into the results you deserve.</div>
+      <div class="blessing-item"><span class="blessing-emoji">💛</span> Sending you good energy, good health, and good luck for every single paper.</div>
+      <div class="blessing-item"><span class="blessing-emoji">🌙</span> May you rest well the night before, and walk into that exam hall feeling ready.</div>
+      <div class="blessing-item"><span class="blessing-emoji">🦋</span> Whatever happens, know that your effort already makes us proud of you.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="section-title">Little reminders for this month</p>
+    <div class="rule"></div>
+    <div class="tips-list">
+      <div class="tip-item"><span class="tip-num">1.</span> Study in short, focused blocks — 45 minutes on, 10 minutes off works better than marathon sessions.</div>
+      <div class="tip-item"><span class="tip-num">2.</span> Sleep is not optional right now. Your brain needs it to actually remember what you studied.</div>
+      <div class="tip-item"><span class="tip-num">3.</span> Revise past papers, not just notes — knowing the format matters as much as knowing the content.</div>
+      <div class="tip-item"><span class="tip-num">4.</span> Drink water, eat properly, and take real breaks. Your body carries you through this too.</div>
+      <div class="tip-item"><span class="tip-num">5.</span> One bad practice test doesn't mean anything about the real exam. Keep going.</div>
+      <div class="tip-item"><span class="tip-num">6.</span> You don't have to feel ready every day. Some days just showing up to study is enough.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="section-title">A note from Dikshan</p>
+    <div class="rule"></div>
+    <div class="letter">
+      <p>Starifa,</p>
+      <p>
+        I know this last month feels heavy. I see how hard you're working, even on the days you don't
+        think anyone notices. I want you to know that no result could ever change how proud I already am of you.
+      </p>
+      <p>
+        Whenever it feels like too much, take a breath and remember: you've prepared for this, you're not
+        doing it alone, and I'm right here cheering for you every single day until you walk out of that exam hall.
+      </p>
+      <p>You've got this. I've got you.</p>
+      <p class="signature">— Dikshan 💛</p>
+    </div>
+  </div>
+
+  <button class="btn" id="send-love-btn" style="margin-top: 8px;">Send some love 💕</button>
+
+  <footer>Made with love, for the girl who's about to do great things.</footer>
+</div>
+
+<div class="floating-hearts" id="floating-hearts"></div>
+
+<script>
+  const QUOTES = [
+    "You don't have to be perfect. You just have to keep showing up.",
+    "Every page you revise today is a step closer to the future you're building.",
+    "Hard days don't mean you're failing. They mean you're growing.",
+    "Your best effort is enough, even on the days it doesn't feel like it.",
+    "Small steps every day add up to something big. Keep going.",
+    "You've survived every hard day so far. This month is no different.",
+    "Confidence comes from preparation, and you've been preparing for this.",
+    "Rest is part of the work too. Take care of yourself along the way.",
+    "One exam does not define your worth or your future.",
+    "Believe in the version of you that's been quietly working this whole time.",
+    "You are capable of far more than this exam could ever measure.",
+    "Focus on today's page, not the whole book. It adds up.",
+  ];
+
+  function showRandomQuote() {
+    const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    document.getElementById('quote-text').textContent = '"' + q + '"';
+  }
+  showRandomQuote();
+  document.getElementById('new-quote-btn').addEventListener('click', showRandomQuote);
+
+  const dateInput = document.getElementById('exam-date');
+  const STORAGE_KEY = 'exam-date-value';
+
+  function getDefaultDate() {
+    const d = new Date();
+    d.setDate(d.getDate() + 30);
+    return d.toISOString().split('T')[0];
+  }
+
+  function loadDate() {
+    try {
+      return localStorage.getItem(STORAGE_KEY) || getDefaultDate();
+    } catch {
+      return getDefaultDate();
+    }
+  }
+
+  function saveDate(value) {
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch {}
+  }
+
+  dateInput.value = loadDate();
+
+  dateInput.addEventListener('change', () => {
+    saveDate(dateInput.value);
+    updateCountdown();
+  });
+
+  function updateCountdown() {
+    const target = new Date(dateInput.value + 'T00:00:00');
+    const now = new Date();
+    const diff = target - now;
+
+    if (isNaN(diff)) return;
+
+    if (diff <= 0) {
+      document.getElementById('days').textContent = '0';
+      document.getElementById('hours').textContent = '0';
+      document.getElementById('minutes').textContent = '0';
+      document.getElementById('seconds').textContent = '0';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  const HEART_EMOJIS = ['💕', '💖', '💛', '🌸', '✨', '💝'];
+
+  function spawnHearts() {
+    const container = document.getElementById('floating-hearts');
+    for (let i = 0; i < 18; i++) {
+      setTimeout(() => {
+        const el = document.createElement('div');
+        el.className = 'heart-particle';
+        el.textContent = HEART_EMOJIS[Math.floor(Math.random() * HEART_EMOJIS.length)];
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.fontSize = (16 + Math.random() * 16) + 'px';
+        el.style.animationDuration = (3 + Math.random() * 2) + 's';
+        container.appendChild(el);
+        setTimeout(() => el.remove(), 5500);
+      }, i * 80);
+    }
+  }
+
+  document.getElementById('send-love-btn').addEventListener('click', spawnHearts);
+</script>
+
+</body>
+</html>
